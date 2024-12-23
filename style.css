@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&family=Satisfy&display=swap');
+body {
+    font-family: "Montserrat", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(/images/bg2.jpg);
+    background-size: cover;
+}
+#cardBtn {
+    width: 200px;
+    height: 300px;
+    appearance: none;
+    position: absolute;
+    z-index: 5;
+}
+#cardBtn:checked ~ main .card:nth-child(1) {
+    opacity: 1;
+    transform: perspective(500px) translateX(-445px) rotateY(-170deg);
+}
+#cardBtn:checked ~ main .card:nth-child(2) {
+    opacity: 1;
+    transform: perspective(500px) translateX(-220px) rotateY(170deg);
+}
+#cardBtn:checked ~ main .card:nth-child(3) {
+    opacity: 1;
+    transform: perspective(1000px) translateX(460px) rotateY(-170deg);
+}
+#cardBtn:checked ~ main .card:nth-child(4) {
+    opacity: 1;
+    transform: perspective(500px) translateX(233px) rotateY(170deg);
+}
+#cardBtn:checked ~ p {
+    scale: 1.2;
+    color: lightseagreen;
+}
+p {
+    position: absolute;
+    z-index: 6;
+    bottom: 36%;
+    font-weight: bold;
+}
+main {
+    width: 200px;
+    height: 300px;
+    background: url(/images/frieren-logo.jpg) no-repeat center;
+    background-size: 100%;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    .card {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+        transform-origin: center;
+
+        &:nth-child(1) {
+            background: url(/images/frieren2.jpg);
+            background-size: cover;
+        }
+        &:nth-child(2) {
+            background: url(/images/frieren1.jpg);
+            background-size: cover;
+        }
+        &:nth-child(3) {
+            background: url(/images/frieren-xmas.jpeg);
+            background-size: cover;
+        }
+        &:nth-child(4) {
+            background: url(/images/frieren3.jpg);
+            background-size: cover;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body  {
+        scale: .45;
+    }
+}
+@media only screen and (min-width: 769px) {
+    body  {
+        scale: .7;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    body  {
+        scale: 1;
+    }
+}
+
+
+figure {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+  
+    figcaption a {
+      color: #242424;
+      text-decoration: none;
+      margin-left: .5rem;
+      font-size: 1.2rem;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+      &:active {
+        font-size: 1rem;
+      }
+    }
+  }
